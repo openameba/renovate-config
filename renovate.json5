@@ -1,7 +1,12 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    'config:best-practices',
-    'local>openameba/renovate-config:main.json5'
-  ]
+    'local>openameba/renovate-config:main.json5',
+    'local>openameba/renovate-config:npm.json5',
+    ':automergeAll'
+  ],
+  reviewers: ['team:openameba-maintainers'],
+  lockFileMaintenance: {
+    automerge: true
+  }
 }
