@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "renovate": "39.146.4"
+  },
+  "engines": {
+    "node": "20",
+    "npm": "10"
+  },
+  "private": true,
+  "scripts": {
+    "test": "git ls-files '*.json5' | xargs -n 1 renovate-config-validator --strict"
+  }
+}
