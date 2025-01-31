@@ -1,3 +1,31 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json'
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    // https://docs.renovatebot.com/presets-default/
+    'config:best-practices',
+    ':enableRenovate',
+    ':dependencyDashboard',
+    // Pull-requestにラベルをつける
+    ':label(renovate)',
+    // タイムゾーンを日本時間にする
+    ':timezone(Asia/Tokyo)',
+    // メジャーバージョンの更新を個別に分ける
+    // https://docs.renovatebot.com/presets-default/#separatemultiplemajorreleases
+    // https://docs.renovatebot.com/configuration-options/#separatemultiplemajor
+    ':separateMultipleMajorReleases',
+    // マージ前に全てのステータスチェックが成功していることを確認する
+    // https://docs.renovatebot.com/presets-default/#automergerequireallstatuschecks
+    ':automergeRequireAllStatusChecks',
+    // 外部アクションををdigestで固定しコメントにバージョンを記載する
+    // https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigeststosemver
+    'helpers:pinGitHubActionDigestsToSemver'
+  ],
+  // 指定されていれば最大で2人のレビュアーを指定する
+  // https://docs.renovatebot.com/configuration-options/#assigneessamplesize
+  assigneesSampleSize: 2,
+  // ロックファイルを更新する
+  // https://docs.renovatebot.com/configuration-options/#lockfilemaintenance
+  lockFileMaintenance: {
+    enabled: true
+  }
 }
