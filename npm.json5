@@ -1,0 +1,21 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    // グループでまとめる
+    // https://docs.renovatebot.com/presets-group/
+    'group:recommended',
+    'group:monorepos',
+    // node.js
+    'group:nodeJs',
+    // npm
+    "group:typescript-eslintMonorepo",
+    'group:definitelyTyped',
+    'group:jsUnitTestNonMajor',
+    'group:linters',
+    'group:postcss',
+    'group:react',
+    // npmパッケージを非公開にできなくなるまで待つ
+    // https://docs.renovatebot.com/presets-npm/#npmunpublishsafe
+    'npm:unpublishSafe'
+  ]
+}
