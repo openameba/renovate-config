@@ -5,7 +5,6 @@
     'local>openameba/renovate-config:npm.json5',
     ':automergeAll'
   ],
-  reviewers: ['team:openameba-maintainers'],
   lockFileMaintenance: {
     automerge: true
   }
