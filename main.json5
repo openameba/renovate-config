@@ -5,6 +5,7 @@
     'config:best-practices',
     ':enableRenovate',
     ':dependencyDashboard',
+    ':configMigration',
     // Pull-requestにラベルをつける
     ':label(renovate)',
     // タイムゾーンを日本時間にする
