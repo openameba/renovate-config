@@ -8,6 +8,6 @@
   },
   "private": true,
   "scripts": {
-    "test": "git ls-files '*.json5' | xargs -n 1 renovate-config-validator --strict"
+    "test": "git ls-files '*.json' '*.json5' ':!:package*.json' | xargs renovate-config-validator --strict"
   }
 }
