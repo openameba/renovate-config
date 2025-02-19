@@ -16,7 +16,7 @@ env:
   TZ: Asia/Tokyo
 
 jobs:
-  test:
+  dry-run:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
