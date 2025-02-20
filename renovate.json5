@@ -3,9 +3,6 @@
   extends: [
     'local>openameba/renovate-config:main.json5',
     'local>openameba/renovate-config:npm.json5',
-    ':automergeAll'
-  ],
-  lockFileMaintenance: {
-    automerge: true
-  }
+    'local>openameba/renovate-config:automerge-all.json5'
+  ]
 }
