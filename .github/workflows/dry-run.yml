@@ -5,10 +5,12 @@ on:
     inputs:
       ref:
         default: main
+        description: target ref
         required: true
         type: string
       path:
         default: renovate.json5
+        description: file path
         required: true
         type: string
 
