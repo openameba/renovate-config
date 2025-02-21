@@ -64,6 +64,7 @@ jobs:
           if-no-files-found: error
           include-hidden-files: false
           name: 'renovate-log-${{ github.ref }}'
+          overwrite: true
           path: '${{ github.ref }}.txt'
           retention-days: 1
       - if: github.ref_name == 'main'
