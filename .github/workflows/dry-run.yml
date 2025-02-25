@@ -61,7 +61,7 @@ jobs:
           RENOVATE_GIT_AUTHOR: 'renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>'
           RENOVATE_TOKEN: ${{ github.token }}
           RENOVATE_USERNAME: renovate[bot]
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
+      - uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
         with:
           if-no-files-found: error
           include-hidden-files: false
