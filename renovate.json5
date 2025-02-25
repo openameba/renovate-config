@@ -7,5 +7,12 @@
   ],
   lockFileMaintenance: {
     automerge: true
-  }
+  },
+  packageRules: [
+    {
+      matchPackageNames: ['renovate'],
+      description: '更新が多すぎるので週末にのみマージする',
+      extends: ['schedule:automergeWeekly']
+    }
+  ]
 }
