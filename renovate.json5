@@ -11,7 +11,7 @@
   packageRules: [
     {
       matchPackageNames: ['renovate'],
-      description: '更新が多すぎるので週末にのみマージする',
+      description: '更新が多すぎるので週始めにのみマージする',
       extends: ['schedule:automergeWeekly']
     }
   ]
