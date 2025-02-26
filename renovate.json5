@@ -3,11 +3,8 @@
   extends: [
     'local>openameba/renovate-config:main.json5',
     'local>openameba/renovate-config:npm.json5',
-    ':automergeAll'
+    'local>openameba/renovate-config:automerge-all.json5'
   ],
-  lockFileMaintenance: {
-    automerge: true
-  },
   packageRules: [
     {
       matchPackageNames: ['renovate'],
