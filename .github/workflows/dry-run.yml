@@ -3,11 +3,6 @@ name: dry run
 on:
   workflow_dispatch:
     inputs:
-      ref:
-        default: main
-        description: target ref
-        required: true
-        type: string
       path:
         default: renovate.json5
         description: file path
@@ -51,12 +46,14 @@ jobs:
           NPM_CONFIG_PROGRESS: false
           NPM_CONFIG_PREFER_OFFLINE: true
       - run: npm rebuild && npm run prepare --if-present
+      - id: file
+        run: echo "name=${GITHUB_REF_NAME//\//__}" | tee -a "$GITHUB_OUTPUT"
       - run: >
           npx renovate --dry-run=full --print-config '${{ github.repository }}'
-          | tee "${GITHUB_REF}.txt"
+          | tee "${GITHUB_REF_NAME//\//__}.txt"
         env:
           LOG_LEVEL: debug
-          RENOVATE_BASE_BRANCHES: ${{ inputs.ref }}
+          RENOVATE_BASE_BRANCHES: ${{ github.ref_name }}
           RENOVATE_CONFIG_FILE: ${{ inputs.path }}
           RENOVATE_GIT_AUTHOR: 'renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>'
           RENOVATE_TOKEN: ${{ github.token }}
@@ -65,9 +62,9 @@ jobs:
         with:
           if-no-files-found: error
           include-hidden-files: false
-          name: 'renovate-log-${{ github.ref }}'
+          name: 'renovate-log-${{ steps.file.outputs.name }}'
           overwrite: true
-          path: '${{ github.ref }}.txt'
+          path: '${{ steps.file.outputs.name }}.txt'
           retention-days: 1
       - if: github.ref_name == 'main'
         uses: actions/cache/save@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
