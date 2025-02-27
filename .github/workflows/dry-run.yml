@@ -52,7 +52,7 @@ jobs:
           NPM_CONFIG_PREFER_OFFLINE: true
       - run: npm rebuild && npm run prepare --if-present
       - run: >
-          npx renovate --dry-run=full --print-config '${{ github.repository }}'
+          npx renovate --dry-run=full --print-config=true '${{ github.repository }}'
           | tee "${GITHUB_REF}.txt"
         env:
           LOG_LEVEL: debug
