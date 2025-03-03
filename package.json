@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "renovate": "39.184.0"
+    "renovate": "39.185.0"
   },
   "engines": {
     "node": "22",
