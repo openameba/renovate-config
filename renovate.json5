@@ -8,8 +8,8 @@
   packageRules: [
     {
       matchPackageNames: ['renovate'],
-      description: '更新が多すぎるので週始めにのみマージする',
-      extends: ['schedule:automergeWeekly']
+      description: '更新が多すぎるので週始めにのみPRを作成する',
+      extends: ['schedule:weekly']
     }
   ]
 }
