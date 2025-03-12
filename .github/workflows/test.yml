@@ -21,6 +21,7 @@ jobs:
       - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version-file: 'package.json'
+      - run: npm install -g npm@$(jq -r '.engines.npm' package.json)
       - uses: openameba/action-npm-cache/restore@17a85603bd7cb8a5af266b11d99440190b213bed # v1.0.0
       - run: npm test
       - if: github.ref_name == 'main'
