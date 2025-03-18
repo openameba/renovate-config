@@ -10,6 +10,9 @@
     ':label(renovate)',
     // タイムゾーンを日本時間にする
     ':timezone(Asia/Tokyo)',
+    // コミットスコープを無効にする
+    // https://docs.renovatebot.com/presets-default/#semanticcommitscopedisabled
+    ':semanticCommitScopeDisabled',
     // メジャーバージョンの更新を個別に分ける
     // https://docs.renovatebot.com/presets-default/#separatemultiplemajorreleases
     // https://docs.renovatebot.com/configuration-options/#separatemultiplemajor
