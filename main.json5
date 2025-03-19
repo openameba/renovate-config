@@ -8,6 +8,7 @@
     ':configMigration',
     // Pull-requestにラベルをつける
     ':label(renovate)',
+    ':enableVulnerabilityAlertsWithLabel(security)',
     // タイムゾーンを日本時間にする
     ':timezone(Asia/Tokyo)',
     // メジャーバージョンの更新を個別に分ける
