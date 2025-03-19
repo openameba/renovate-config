@@ -8,6 +8,10 @@
     "node": "22",
     "npm": "11"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
   "private": true,
   "scripts": {
     "test": "git ls-files '*.json' '*.json5' ':!:package*.json' | xargs renovate-config-validator --strict"
