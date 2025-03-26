@@ -8,7 +8,7 @@
     // node.js
     'group:nodeJs',
     // npm
-    "group:typescript-eslintMonorepo",
+    'group:typescript-eslintMonorepo',
     'group:definitelyTyped',
     'group:jsUnitTestNonMajor',
     'group:linters',
