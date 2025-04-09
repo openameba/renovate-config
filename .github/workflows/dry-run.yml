@@ -50,7 +50,7 @@ jobs:
       - id: file
         run: echo "name=${GITHUB_REF_NAME//\//__}" | tee -a "$GITHUB_OUTPUT"
       - run: >
-          npx renovate --dry-run=full --print-config '${{ github.repository }}'
+          npx renovate --dry-run=full --print-config=true '${{ github.repository }}'
           | tee "${GITHUB_REF_NAME//\//__}.txt"
         env:
           LOG_LEVEL: debug
