@@ -22,7 +22,7 @@ jobs:
         with:
           node-version-file: 'package.json'
       - run: npm install -g npm@$(jq -r '.engines.npm' package.json)
-      - uses: openameba/action-npm-cache/restore@17a85603bd7cb8a5af266b11d99440190b213bed # v1.0.0
+      - uses: openameba/action-npm-cache/restore@bc5633e94971615a98562d936df5a4c20b8ef1fc # v1.1.0
       - run: npm test
       - if: github.ref_name == 'main'
-        uses: openameba/action-npm-cache/save@17a85603bd7cb8a5af266b11d99440190b213bed # v1.0.0
+        uses: openameba/action-npm-cache/save@bc5633e94971615a98562d936df5a4c20b8ef1fc # v1.1.0
