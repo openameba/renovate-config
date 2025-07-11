@@ -1,0 +1,6 @@
+// リポジトリがアプリケーションの場合に使用します
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  // https://docs.renovatebot.com/presets-config/#configjs-app
+  extends: [':pinAllExceptPeerDependencies']
+}
