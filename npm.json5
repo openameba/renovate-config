@@ -15,7 +15,7 @@
     'group:postcss',
     'group:react',
     // npmパッケージを非公開にできなくなるまで待つ
-    // https://docs.renovatebot.com/presets-npm/#npmunpublishsafe
-    'npm:unpublishSafe'
+    // https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm
+    'security:minimumReleaseAgeNpm'
   ]
 }
