@@ -23,7 +23,9 @@
     ':automergeRequireAllStatusChecks',
     // 外部アクションををdigestで固定しコメントにバージョンを記載する
     // https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigeststosemver
-    'helpers:pinGitHubActionDigestsToSemver'
+    'helpers:pinGitHubActionDigestsToSemver',
+    // GitHub Actionsで使われているDockerイメージを更新する
+    'local>openameba/renovate-config:docker-in-github-actions.json5'
   ],
   // 指定されていれば最大で2人の担当を指定する
   // https://docs.renovatebot.com/configuration-options/#assigneessamplesize
