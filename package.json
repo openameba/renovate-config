@@ -4,9 +4,20 @@
     "prettier": "3.7.4",
     "renovate": "42.46.0"
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "11",
+      "onFail": "error"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24",
+      "onFail": "error"
+    }
+  },
   "engines": {
-    "node": "24",
-    "npm": "11"
+    "node": "24"
   },
   "prettier": {
     "singleQuote": true,
