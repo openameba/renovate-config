@@ -32,5 +32,16 @@
   // https://docs.renovatebot.com/configuration-options/#lockfilemaintenance
   lockFileMaintenance: {
     enabled: true
-  }
+  },
+  customManagers: [
+    {
+      // GitHub Actionsで使われているDockerイメージを更新する
+      customType: 'regex',
+      managerFilePatterns: ['^\.github/workflows/.*\.ya?ml$'],
+      matchStrings: [
+        'docker://(?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?'
+      ],
+      datasourceTemplate: 'docker'
+    }
+  ]
 }
