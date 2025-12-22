@@ -23,9 +23,7 @@
     ':automergeRequireAllStatusChecks',
     // 外部アクションををdigestで固定しコメントにバージョンを記載する
     // https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigeststosemver
-    'helpers:pinGitHubActionDigestsToSemver',
-    // GitHub Actionsで使われているDockerイメージを更新する
-    'local>openameba/renovate-config:docker-in-github-actions.json5'
+    'helpers:pinGitHubActionDigestsToSemver'
   ],
   // 指定されていれば最大で2人の担当を指定する
   // https://docs.renovatebot.com/configuration-options/#assigneessamplesize
@@ -34,5 +32,16 @@
   // https://docs.renovatebot.com/configuration-options/#lockfilemaintenance
   lockFileMaintenance: {
     enabled: true
-  }
+  },
+  customManagers: [
+    {
+      // GitHub Actionsで使われているDockerイメージを更新する
+      customType: 'regex',
+      managerFilePatterns: ['^\.github/workflows/.*\.ya?ml$'],
+      matchStrings: [
+        'docker://(?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?'
+      ],
+      datasourceTemplate: 'docker'
+    }
+  ]
 }
