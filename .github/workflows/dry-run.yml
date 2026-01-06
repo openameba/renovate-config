@@ -23,6 +23,7 @@ jobs:
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
           node-version-file: 'package.json'
+          package-manager-cache: false
       - run: npm install -g npm@$(jq -r '.engines.npm' package.json)
       - id: npm-cache
         run: echo "dir=$(npm config get cache)" | tee -a "$GITHUB_OUTPUT"
