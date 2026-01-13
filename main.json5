@@ -25,6 +25,9 @@
     // https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigeststosemver
     'helpers:pinGitHubActionDigestsToSemver'
   ],
+  // silent modeを無効にする
+  // https://docs.renovatebot.com/configuration-options/#mode
+  mode: 'full',
   // 指定されていれば最大で2人の担当を指定する
   // https://docs.renovatebot.com/configuration-options/#assigneessamplesize
   assigneesSampleSize: 2,
