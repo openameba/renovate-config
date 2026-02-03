@@ -45,6 +45,18 @@
         'docker://(?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?'
       ],
       datasourceTemplate: 'docker'
+    },
+    {
+      // GitHub Actionsでrenovateコメント付きのrefフィールドを更新する
+      // 例:
+      //   # renovate: datasource=github-tags depName=openameba/example-repo
+      //   ref: v1.0.0
+      customType: 'regex',
+      managerFilePatterns: ['/^\\.github/workflows/.*\\.ya?ml$/'],
+      matchStrings: [
+        '#\\s*renovate:\\s*datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+versioning=(?<versioning>[^\\s]+))?\\n\\s*ref:\\s*(?<currentValue>[^\\s]+)'
+      ],
+      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}'
     }
   ]
 }
