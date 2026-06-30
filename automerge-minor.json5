@@ -4,5 +4,11 @@
   lockFileMaintenance: {
     automerge: true,
     enabled: true
+  },
+  // クールダウン
+  minimumReleaseAge: '7 days',
+  // 脆弱性修正は即時
+  vulnerabilityAlerts: {
+    minimumReleaseAge: null
   }
 }
