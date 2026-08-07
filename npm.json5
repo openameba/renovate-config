@@ -13,9 +13,6 @@
     'group:jsUnitTestNonMajor',
     'group:linters',
     'group:postcss',
-    'group:react',
-    // npmパッケージを非公開にできなくなるまで待つ
-    // https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm
-    'security:minimumReleaseAgeNpm'
+    'group:react'
   ]
 }
