@@ -1,0 +1,3 @@
+# 依存追加時にバージョンを固定する
+# https://pnpm.io/settings#saveexact
+saveExact: true

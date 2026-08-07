@@ -22,8 +22,9 @@ jobs:
         with:
           node-version-file: 'package.json'
           package-manager-cache: false
-      - run: npm install -g npm@$(jq -r '.devEngines.packageManager.version' package.json)
-      - uses: openameba/action-npm-cache/restore@bc5633e94971615a98562d936df5a4c20b8ef1fc # v1.1.0
-      - run: npm test
+      # バージョンはpackage.jsonのdevEngines.packageManagerから読まれる
+      - uses: pnpm/action-setup@ff378ebe6b225b0680b81c1ad4498ae0d1d3a5e3 # v6.0.10
+      - uses: openameba/action-npm-cache/restore@af6e98076ee69d0eb6f0b6550233164833822142 # v1.2.1
+      - run: pnpm test
       - if: github.ref_name == 'main'
-        uses: openameba/action-npm-cache/save@bc5633e94971615a98562d936df5a4c20b8ef1fc # v1.1.0
+        uses: openameba/action-npm-cache/save@af6e98076ee69d0eb6f0b6550233164833822142 # v1.2.1
