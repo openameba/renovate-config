@@ -1,3 +1,23 @@
 # 依存追加時にバージョンを固定する
 # https://pnpm.io/settings#saveexact
 saveExact: true
+
+# クールダウン: リリースから7日経過するまでインストールしない
+# main.json5のminimumReleaseAgeと同じ7日に揃えている
+# 脆弱性修正を即時に入れる場合はminimumReleaseAgeExcludeに追記する
+# https://pnpm.io/settings/dependency-resolution#minimumreleaseage
+# https://pnpm.io/settings/dependency-resolution#minimumreleaseageexclude
+# 7 days = 10080 minutes
+minimumReleaseAge: 10080
+
+# 公開時の信頼レベルが下がったパッケージを弾く
+# https://pnpm.io/settings/dependency-resolution#trustpolicy
+trustPolicy: no-downgrade
+# どちらもrenovateの依存ツリー由来で、provenanceなしで公開された古いバージョンのため
+# package takeoverの疑いとして弾かれる。renovateをdevDependenciesから外せば不要になる
+# https://pnpm.io/settings/dependency-resolution#trustpolicyexclude
+trustPolicyExclude:
+  # @yarnpkg/core@4.9.0 -> @yarnpkg/libzip@3.2.2
+  - '@yarnpkg/libzip@3.2.2'
+  # semver-stable@3.0.0 -> semver@6.3.1
+  - 'semver@6.3.1'
