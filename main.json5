@@ -36,6 +36,9 @@
   lockFileMaintenance: {
     enabled: true
   },
+  // クールダウン: リリースから7日経過するまで更新を保留する
+  // https://docs.renovatebot.com/key-concepts/minimum-release-age/
+  minimumReleaseAge: '7 days',
   customManagers: [
     {
       // GitHub Actionsで使われているDockerイメージを更新する
