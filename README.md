@@ -32,6 +32,9 @@ sharable renovate configs
 
 ### With automerge minor
 
+The automerge presets only configure automerge. Always extend them together with `main.json5`,
+which defines the `minimumReleaseAge` cooldown.
+
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
