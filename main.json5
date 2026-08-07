@@ -39,6 +39,18 @@
   // クールダウン: リリースから7日経過するまで更新を保留する
   // https://docs.renovatebot.com/key-concepts/minimum-release-age/
   minimumReleaseAge: '7 days',
+  packageRules: [
+    {
+      // security:minimumReleaseAgeNpmがnpmに対して行っている除外を、
+      // トップレベルのminimumReleaseAgeが波及する全datasourceへ広げる
+      // bumpはisBumpフラグでもマッチしクールダウンが外れるため含めない
+      // lockfileUpdateとrollbackはこのプリセット群の設定では発生しないため含めない
+      // https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-update-types-take-minimumreleaseage-into-account
+      description: 'release timestampを持たない更新はクールダウンの対象外にする',
+      matchUpdateTypes: ['pin', 'replacement', 'lockFileMaintenance'],
+      minimumReleaseAge: null
+    }
+  ],
   customManagers: [
     {
       // GitHub Actionsで使われているDockerイメージを更新する
