@@ -6,9 +6,5 @@
     enabled: true
   },
   // クールダウン
-  minimumReleaseAge: '7 days',
-  // 脆弱性修正は即時
-  vulnerabilityAlerts: {
-    minimumReleaseAge: null
-  }
+  minimumReleaseAge: '7 days'
 }
