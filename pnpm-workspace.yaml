@@ -2,6 +2,13 @@
 # https://pnpm.io/settings#saveexact
 saveExact: true
 
+# pnpm自身のバージョン管理をpnpmに任せない
+# 既定のdownloadはdevEngines.packageManagerからpnpmをダウンロードし、
+# pnpm-lock.yamlに@pnpm/exeとプラットフォームバイナリを書き足す
+# pnpmはCIではpnpm/action-setupが入れるため、pnpmに管理させると二重になる
+# https://pnpm.io/settings/cli#pmonfail
+pmOnFail: ignore
+
 # クールダウン: リリースから7日経過するまでインストールしない
 # main.json5のminimumReleaseAgeと同じ7日に揃えている
 # 脆弱性修正を即時に入れる場合はminimumReleaseAgeExcludeに追記する
