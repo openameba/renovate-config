@@ -7,12 +7,12 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11",
+      "version": "11.28.4",
       "onFail": "error"
     },
     "runtime": {
       "name": "node",
-      "version": "24",
+      "version": "v24.21.0",
       "onFail": "error"
     }
   },
